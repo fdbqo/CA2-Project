@@ -30,11 +30,11 @@
         <TextBlock x:Name="test" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Text="World Cup" FontSize="36" TextAlignment="Center"></TextBlock>
 
         <TextBlock Grid.Row="1" Text="Teams" Margin="10,47,10,72" FontSize="16" Grid.RowSpan="2"/>
-        <ListBox x:Name="TeamsDisplay" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10">
+        <ListBox x:Name="TeamsDisplay" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10" SelectionChanged="TeamsDisplay_SelectionChanged">
         </ListBox>
 
         <TextBlock Grid.Row="1" Grid.Column="3" Text="Players" Margin="10,47,10,72" FontSize="16" Grid.RowSpan="2"/>
-        <ListBox x:Name="PlayersDisplay" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10">
+        <ListBox x:Name="PlayersDisplay" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10" SelectionChanged="PlayersDisplay_SelectionChanged">
         </ListBox>
 
         <TextBlock Grid.Row="1" Grid.Column="6" Text="Player Rating" Margin="10,47,10,72" FontSize="16" Grid.RowSpan="2"/>
@@ -47,9 +47,9 @@
         
         <TextBlock Grid.Row="3" Grid.Column="6" Text="Record Result" Margin="10,47,10,72" FontSize="16" Grid.RowSpan="2"/>
         <StackPanel Grid.Row="4" Grid.Column="6" Grid.RowSpan="2"  Margin="10"  >
-            <Button Content="Win"  Margin="10"></Button>
-            <Button Content="Draw" Margin="10"></Button>
-            <Button Content="Loss" Margin="10"></Button>
+            <Button Content="Win"  Margin="10" Click="WinButton"></Button>
+            <Button Content="Draw" Margin="10" Click="DrawButton"></Button>
+            <Button Content="Loss" Margin="10" Click="LossButton"></Button>
         </StackPanel>
         
 

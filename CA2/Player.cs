@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace CA2.Players
 {
-    internal class Player
+    public class Player
     { 
-        string Name {  get; set; }
-        string ResultRecord { get; set; }
+        public string Name {  get; set; }
+        public string ResultRecord { get; set; }
+
+        public int _ptsTotal;
+        public int ptsTotal
+        {
+            get
+            {
+                CalculatePoints();
+                return _ptsTotal;
+            }
+        }
 
         public Player() { }
 
@@ -22,6 +32,42 @@ namespace CA2.Players
         {
             Name = name;
             ResultRecord = resultRecord;
+            
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} - {ResultRecord} - {ptsTotal}";
+        }
+
+        private void CalculatePoints()
+        {
+            char[] results = ResultRecord.ToCharArray();
+            Console.Write(results);
+
+            _ptsTotal = 0;
+
+
+            foreach (char c in results)
+            {
+                
+                switch (c)
+                {
+                    case 'W':
+                        _ptsTotal += 3;
+                        break;
+
+                    case 'D':
+                        _ptsTotal += 1;
+                        break;
+
+                    case 'L':
+                        _ptsTotal += 0;
+                        break;
+                }
+            }
+    
+ 
         }
     }
 }
