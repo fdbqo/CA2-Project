@@ -51,6 +51,7 @@
             <Button Content="Draw" Margin="10"></Button>
             <Button Content="Loss" Margin="10"></Button>
         </StackPanel>
+        
 
 
     </Grid>
