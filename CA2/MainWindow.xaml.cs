@@ -39,7 +39,7 @@ namespace CA2
             Team t2 = new Team() { Name = "Italy" };
             Team t3 = new Team() { Name = "Spain" };
 
-            ObservableCollection<Team> teams = new ObservableCollection<Team>() { t1, t2, t3 };
+            teams = new ObservableCollection<Team>() { t1, t2, t3 };
            
 
             
@@ -87,30 +87,11 @@ namespace CA2
                 
             }
 
-            foreach (var _teams in teams)
-            {
-                _teams._totalPoints = CalculateTeamPoints(_teams.Players);
-            }
+           
             
         }
 
-        private int CalculateTeamPoints(List<Player> players)
-        {
-            int totalPoints = 0;
-
-            foreach (var player in players)
-            {
-                if (player != null)
-                {
-                    totalPoints += player.ptsTotal;
-                }
-            }
-
-            return totalPoints;
-        }
-
-
-
+   
         private void PlayersDisplay_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedPlayer = PlayersDisplay.SelectedItem as Player;
@@ -199,6 +180,8 @@ namespace CA2
                 resultsUpdated = resultsUpdated.Concat(new[] { RESULT }).ToArray();
 
                 selectedPlayer.ResultRecord = new string(resultsUpdated);
+
+                UpdateTeamPoints();
             }
 
             
@@ -218,6 +201,8 @@ namespace CA2
                 resultsUpdated = resultsUpdated.Concat(new[] { RESULT }).ToArray();
 
                 selectedPlayer.ResultRecord = new string(resultsUpdated);
+
+                UpdateTeamPoints();
             }
 
 
@@ -237,9 +222,27 @@ namespace CA2
                 resultsUpdated = resultsUpdated.Concat(new[] { RESULT }).ToArray();
 
                 selectedPlayer.ResultRecord = new string(resultsUpdated);
+
+                UpdateTeamPoints();
             }
 
 
         }
+
+        private void UpdateTeamPoints()
+        {
+            foreach (var _team in teams)
+            {
+                _team._totalPoints = _team.Players.Sum(player => player.ptsTotal);
+
+            }
+
+      
+            // Rebind the sorted teams to the ListBox
+            ObservableCollection<Team> sortedTeams = new ObservableCollection<Team>(teams.OrderByDescending(t => t.totalPoints));
+            
+            TeamsDisplay.ItemsSource = sortedTeams;
+        }
+
     }
 }
