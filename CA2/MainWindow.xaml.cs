@@ -25,6 +25,9 @@ namespace CA2
     /// 
     /// Extra notes : 
     /// Because players is a list, it's not updated as automatically as it should be 
+    /// 
+    /// github link : 
+    /// https://github.com/fdbqo/CA2-Project
     /// </summary>
     public partial class MainWindow : Window
     {
