@@ -14,7 +14,7 @@ namespace CA2.Teams
         public List<Player> Players { get; set; }
 
         public int _totalPoints;
-        public int totalPoints
+        public int totalPoints //points calculated based on players in the team
         {
             get
             {
@@ -29,6 +29,8 @@ namespace CA2.Teams
             }
             
         }
+
+
         public Team() { }
         public Team(string name)
         {
@@ -51,6 +53,7 @@ namespace CA2.Teams
         {
             return $"{Name} - {totalPoints}";
         }
+        // for listbox output
 
         
     }

@@ -39,8 +39,9 @@ namespace CA2.Players
         {
             return $"{Name} - {ResultRecord} - {ptsTotal}";
         }
+        // for output in listbox
 
-        private void CalculatePoints()
+        private void CalculatePoints() // calculates points based on string of result records
         {
             char[] results = ResultRecord.ToCharArray();
             Console.Write(results);
@@ -66,7 +67,7 @@ namespace CA2.Players
                         break;
                 }
             }
-    
+ 
  
         }
     }
