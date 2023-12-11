@@ -27,7 +27,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="test" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Text="World Cup" FontSize="36" TextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="test" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Text="Tiddlywinks World Cup" FontSize="36" TextAlignment="Center" Margin="100,0,34,76" Grid.RowSpan="2"></TextBlock>
 
         <TextBlock Grid.Row="1" Text="Teams" Margin="10,47,10,72" FontSize="16" Grid.RowSpan="2"/>
         <ListBox x:Name="TeamsDisplay" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10" SelectionChanged="TeamsDisplay_SelectionChanged">
@@ -43,15 +43,15 @@
             <Image x:Name="star2" Source="staroutline.png" Width="40px"></Image>
             <Image x:Name="star3" Source="staroutline.png" Width="40px"></Image>
         </StackPanel>
-        
-        
+
+
         <TextBlock Grid.Row="3" Grid.Column="6" Text="Record Result" Margin="10,47,10,72" FontSize="16" Grid.RowSpan="2"/>
         <StackPanel Grid.Row="4" Grid.Column="6" Grid.RowSpan="2"  Margin="10"  >
             <Button Content="Win"  Margin="10" Click="WinButton"></Button>
             <Button Content="Draw" Margin="10" Click="DrawButton"></Button>
             <Button Content="Loss" Margin="10" Click="LossButton"></Button>
         </StackPanel>
-        
+
 
 
     </Grid>
